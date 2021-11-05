@@ -50,7 +50,7 @@ public class PatientController {
     }
 
     //ALL PATIENTS
-    // http://localhost:8080/patients
+    // http://localhost:8080/allPatients
     @GetMapping("/allPatients")
     public List<Patient> getPatients() {
         List<Patient> patients = patientService.findAllPatients();

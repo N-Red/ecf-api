@@ -15,6 +15,7 @@
         <th>Last Name</th>
         <th>First Name</th>
         <th>Birthdate</th>
+        <th>Age</th>
         <th>Address</th>
         <th>Gender</th>
     </tr>
@@ -25,12 +26,12 @@
         <td th:utext="${patient.lastName}">Last Name</td>
         <td th:utext="${patient.firstName}">First Name</td>
         <td th:utext="${patient.birthdate}">Birthdate</td>
+        <td th:utext="${patient.age}">Age</td>
         <td th:utext="${patient.address}">Address</td>
         <td th:utext="${patient.gender}">Gender</td>
     </tr>
     </tbody>
 </table>
-<a class="btn" href="/newUser">Create New Patient</a>
 
 </body>
 </html>

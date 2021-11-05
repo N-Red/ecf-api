@@ -17,6 +17,7 @@ public class PatientService {
     private PatientRepository patientRepository;
 
     public void createPatient(Patient patient) {
+        patient.setAge(LocalDate.now().getYear() - patient.getBirthdate().getYear());
         patientRepository.save(patient);
         System.out.println("Patient Created");
     }

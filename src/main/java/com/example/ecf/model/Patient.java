@@ -15,6 +15,7 @@ public class Patient {
     private LocalDate birthdate;
     private String address;
     private String gender;
+    private Integer age;
 
     public Patient() {
     }
@@ -85,4 +86,11 @@ public class Patient {
         this.gender = gender;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }
