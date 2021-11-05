@@ -14,6 +14,7 @@ http://localhost:8080/createPatient
 http://localhost:8080/readPatient=1
 
 http://localhost:8080/updatePatient
+
 {
 "id" : 1,
 "lastName" : "Red updated",
