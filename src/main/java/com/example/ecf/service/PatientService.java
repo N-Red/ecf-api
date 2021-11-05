@@ -17,9 +17,9 @@ public class PatientService {
     private PatientRepository patientRepository;
 
     public void createPatient(Patient patient) {
-        //Convert Birthdate to Age
         patient.setAge(LocalDate.now().getYear() - patient.getBirthdate().getYear());
         patientRepository.save(patient);
+        System.out.println("Patient Created");
     }
 
     public void updatePatient(Patient patient) {
@@ -30,10 +30,12 @@ public class PatientService {
         patientSelected.setAddress(patient.getAddress());
         patientSelected.setGender(patient.getGender());
         patientRepository.save(patientSelected);
+        System.out.println("Patient updated");
     }
 
     public void deletePatient(Patient patient) {
         patientRepository.delete(patient);
+        System.out.println("Patient deleted");
     }
 
     public Optional<Patient> findPatientById(Long id) {
@@ -45,7 +47,10 @@ public class PatientService {
     }
 
     public Integer findAgeOfPatient(Long id) {
-        return patientRepository.findById(id).get().getAge();
+        Integer year = patientRepository.findById(id).get().getAge();
+        Integer actualYear = LocalDate.now().getYear();
+        Integer age = actualYear - year;
+        return age;
     }
 
     public List<Patient> findAllPatientsWithSameName(String name) {
@@ -53,5 +58,4 @@ public class PatientService {
                 .filter(patient -> patient.getLastName().equalsIgnoreCase(name))
                 .collect(Collectors.toList());
     }
-
 }
