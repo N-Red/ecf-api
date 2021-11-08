@@ -15,7 +15,6 @@ public class Patient {
     private LocalDate birthdate;
     private String address;
     private String gender;
-    private Integer age;
 
     public Patient() {
     }
@@ -27,16 +26,6 @@ public class Patient {
         this.address = address;
         this.gender = gender;
     }
-
-    public Patient(Long id, String lastName, String firstName, LocalDate birthdate, String address, String gender) {
-        this.id = id;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.birthdate = birthdate;
-        this.address = address;
-        this.gender = gender;
-    }
-
 
     public Long getId() {
         return id;
@@ -86,11 +75,4 @@ public class Patient {
         this.gender = gender;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 }

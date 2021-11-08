@@ -17,7 +17,6 @@ public class PatientService {
     private PatientRepository patientRepository;
 
     public void createPatient(Patient patient) {
-        patient.setAge(LocalDate.now().getYear() - patient.getBirthdate().getYear());
         patientRepository.save(patient);
         System.out.println("Patient Created");
     }
@@ -47,7 +46,7 @@ public class PatientService {
     }
 
     public Integer findAgeOfPatient(Long id) {
-        Integer year = patientRepository.findById(id).get().getAge();
+        Integer year = patientRepository.findById(id).get().getBirthdate().getYear();
         Integer actualYear = LocalDate.now().getYear();
         Integer age = actualYear - year;
         return age;
